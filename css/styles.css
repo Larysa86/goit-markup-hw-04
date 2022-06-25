@@ -1,14 +1,27 @@
 :root {
+
+    /* Кольори тексту */
     --primary-text-color: #757575;
     --title-text-color: #212121;
     --secondary-title-color: #ffffff;
+    --footer-text-color: rgba(255, 255, 255, 0.6);
+    /* Кольори фону */
     --background-color: #ffffff;
     --secondary-background-color: #f5f4fa;
     --third-background-color: #2f303a;
+
+    /* Акцентні кольори */
     --accent-color: #2196f3;
-    --footer-text-color: rgba(255, 255, 255, 0.6);
     --accent-color-focus: #188ce8;
-    --card-set-gap: 30px;
+
+    /* Інше */
+
+    --items: 4;
+    --indent: 30px;
+    /* --card-set-gap: 30px;
+    flex-basis: calc(100% / 3 - var(--card-set-gap));
+    margin-left: calc(-1 * var(--card-set-gap));
+    margin-top: calc(-1 * var(--card-set-gap)); */
 }
 
 body {
@@ -28,7 +41,7 @@ body {
     padding-right: 15px;
     width: 1200px;
 
-    /* outline: 2px solid rgb(203, 72, 203); */
+
 }
 
 .section {
@@ -38,6 +51,28 @@ body {
 
 .link {
     text-decoration: none;
+}
+
+.list,
+.footer-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 /* reset */
@@ -57,26 +92,24 @@ img {
     height: auto;
 }
 
-.list,
-.footer-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+
+/* Сітка із застосуванням Flex-box */
+
+.card-set {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(-1 * var(--indent) / 2);
 }
 
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+.card-set-item {
+    margin: calc(var(--indent) / 2);
+    flex-basis: calc((100% - (var(--indent))*var(--items)) / var(--items));
 }
+
+
+
+
+
 
 /* Шапка сторінки */
 
@@ -153,6 +186,20 @@ img {
     margin-right: 50px;
 }
 
+
+
+/* .contact::before {
+    display: inline-block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+
+
+    outline: 1px solid rebeccapurple;
+} */
+
+
 .contact {
     display: block;
     padding-top: 32px;
@@ -162,6 +209,8 @@ img {
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.02em;
+
+    /* fill: #757575; проверить!!! */
 }
 
 .contact:hover,
@@ -169,11 +218,37 @@ img {
     color: var(--accent-color);
 }
 
+/* .icon-mail {
+    margin-right: 10px;
+    width: 16px;
+    height: 12px;
+    fill: currentColor;
+}
+
+.icon-phone {
+    margin-right: 10px;
+    width: 10px;
+    height: 16px;
+    fill: currentColor;
+} */
+
+
+
 /* Унікальний контент сторінки(main) */
 
 /* Секція Герой */
 
 .section.hero {
+
+    max-width: 1600px;
+    /* height: 600px; */
+    margin-left: auto;
+    margin-right: auto;
+    /* background-position: center; */
+    background-size: cover;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url('../images/hero/Img.jpg');
+    /* background-repeat: no-repeat; */
+
     padding: 200px 0;
     background-color: var(--third-background-color);
     text-align: center;
@@ -208,7 +283,6 @@ img {
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
-    /* display: flex; */
     align-items: center;
     text-align: center;
     letter-spacing: 0.06em;
@@ -226,17 +300,75 @@ img {
 
 
 .benefits-list {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    margin-left: calc(-1 * var(--card-set-gap));
-    margin-top: calc(-1 * var(--card-set-gap));
+    margin: calc(-1 * var(--indent) / 2); */
+
+    /* margin-left: calc(-1 * var(--card-set-gap));
+    margin-top: calc(-1 * var(--card-set-gap)); */
+
+
 }
 
 .benefits-list-item {
-    flex-basis: calc(100% / 4 - var(--card-set-gap));
-    margin-left: var(--card-set-gap);
-    margin-top: var(--card-set-gap);
+
+    /* flex-basis: calc(100% / 4 - var(--card-set-gap)); */
+    /* margin: calc(var(--indent) / 2);
+    flex-basis: calc((100% - (var(--indent))*var(--items)) / var(--items)); */
+    /* margin-left: var(--card-set-gap);
+    margin-top: var(--card-set-gap); */
 }
+
+/* Іконки через before ПОЧАТОК */
+
+.benefits-list-item::before {
+    display: block;
+    content: '';
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 120px;
+    background-color: #F5F4FA;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+
+.benefits-list-item.icon-antenna::before {
+    background-image: url(../images/benefits/antenna.svg);
+}
+
+.benefits-list-item.icon-clock::before {
+    background-image: url(../images/benefits/clock.svg);
+}
+
+.benefits-list-item.icon-diagram::before {
+    background-image: url(../images/benefits/diagram.svg);
+}
+
+.benefits-list-item.icon-astronaut::before {
+    background-image: url(../images/benefits/astronaut.svg);
+}
+
+/* КІНЕЦЬ */
+
+
+/* .item-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f4fa;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    height: 120px;
+}
+
+.benefits-icon {
+    width: 70px;
+    height: 70px;
+} */
+
+
+
 
 .benefits-title {
     margin-bottom: 10px;
@@ -254,9 +386,10 @@ img {
 
 /* Секція Наша робота */
 
-.section.job{
+.section.job {
     padding-top: 0;
 }
+
 
 .section-title {
     margin-bottom: 50px;
@@ -268,17 +401,11 @@ img {
 }
 
 .job-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: calc(-1 * var(--card-set-gap));
-    margin-top: calc(-1 * var(--card-set-gap));
+    --items: 3;
+
 }
 
-.job-list-item {
-    flex-basis: calc(100% / 3 - var(--card-set-gap));
-    margin-left: var(--card-set-gap);
-    margin-top: var(--card-set-gap);
-}
+
 
 /* Секція Наша команда */
 
@@ -286,22 +413,14 @@ img {
     background-color: var(--secondary-background-color);
 }
 
-.team-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: calc(-1 * var(--card-set-gap));
-    margin-top: calc(-1 * var(--card-set-gap));
-}
 
 .team-list-item {
-    flex-basis: calc(100% / 4 - var(--card-set-gap));
-    margin-left: var(--card-set-gap);
-    margin-top: var(--card-set-gap);
 
     text-align: center;
 }
 
 .card {
+
     background-color: var(--secondary-title-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
         px 2px 1px rgba(0, 0, 0, 0.2);
@@ -309,6 +428,7 @@ img {
 }
 
 .card-content {
+
     padding: 30px 0;
 }
 
@@ -322,8 +442,83 @@ img {
 }
 
 .team-position {
+    margin-bottom: 16px;
+
     font-size: 16px;
     line-height: 1.19;
+}
+
+.networks-list {
+    display: flex;
+
+    justify-content: center;
+    gap: 10px;
+}
+
+/* АБО */
+
+/* .networks-item:not(:last-child) {
+    margin-right: 10px;
+} */
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    color: #afb1b8;
+
+
+
+}
+
+.social-link:hover,
+.social-link:focus {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+.social-icon {
+    fill: currentColor;
+}
+
+
+/* Cекція Постійні клієнти */
+
+
+
+.clients-list {
+    --items: 6;
+}
+
+
+
+
+
+
+.clients-list-item {}
+
+.clients-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 92px;
+    color: #afb1b8;
+    border: 1px solid #afb1b8;
+    border-radius: 4px;
+}
+
+.clients-link:hover,
+.clients-link:focus {
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.clients-icon {
+    fill: currentColor;
 }
 
 /* Підвал */
@@ -333,6 +528,21 @@ img {
     background-color: var(--third-background-color);
 }
 
+.footer-container {
+    display: flex;
+
+}
+
+.address-container:not(:last-child) {
+    margin-right: 70px;
+
+}
+
+/* .container-address+.container-address {
+    margin-left: 70px;
+} */
+
+
 .footer .logo {
     display: block;
     margin-bottom: 20px;
@@ -340,7 +550,10 @@ img {
     color: var(--secondary-title-color);
 }
 
+
+
 /* Адреса */
+
 
 .footer-list-item:not(:last-child) {
     margin-bottom: 9px;
@@ -363,6 +576,49 @@ img {
 .address-contact:focus {
     color: var(--accent-color);
 }
+
+.footer-title {
+
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--secondary-title-color);
+}
+
+
+
+/* .footer-networks-item {
+
+} */
+
+.footer-social-link {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    border-radius: 50%;
+
+
+
+}
+
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+    background-color: var(--accent-color);
+
+}
+
+.footer-social-icon {
+    fill: currentColor;
+}
+
 
 /* Секція Портфоліо */
 
