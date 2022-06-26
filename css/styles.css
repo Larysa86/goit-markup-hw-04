@@ -298,29 +298,6 @@ img {
 
 /* Секція Переваги */
 
-
-.benefits-list {
-    /* display: flex;
-    flex-wrap: wrap;
-    margin: calc(-1 * var(--indent) / 2); */
-
-    /* margin-left: calc(-1 * var(--card-set-gap));
-    margin-top: calc(-1 * var(--card-set-gap)); */
-
-
-}
-
-.benefits-list-item {
-
-    /* flex-basis: calc(100% / 4 - var(--card-set-gap)); */
-    /* margin: calc(var(--indent) / 2);
-    flex-basis: calc((100% - (var(--indent))*var(--items)) / var(--items)); */
-    /* margin-left: var(--card-set-gap);
-    margin-top: var(--card-set-gap); */
-}
-
-/* Іконки через before ПОЧАТОК */
-
 .benefits-list-item::before {
     display: block;
     content: '';
@@ -334,40 +311,20 @@ img {
 
 
 .benefits-list-item.icon-antenna::before {
-    background-image: url(../images/benefits/antenna.svg);
+    background-image: url(../images/icons/antenna.svg);
 }
 
 .benefits-list-item.icon-clock::before {
-    background-image: url(../images/benefits/clock.svg);
+    background-image: url(../images/icons/clock.svg);
 }
 
 .benefits-list-item.icon-diagram::before {
-    background-image: url(../images/benefits/diagram.svg);
+    background-image: url(../images/icons/diagram.svg);
 }
 
 .benefits-list-item.icon-astronaut::before {
-    background-image: url(../images/benefits/astronaut.svg);
+    background-image: url(../images/icons/astronaut.svg);
 }
-
-/* КІНЕЦЬ */
-
-
-/* .item-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f5f4fa;
-    border-radius: 4px;
-    margin-bottom: 30px;
-    height: 120px;
-}
-
-.benefits-icon {
-    width: 70px;
-    height: 70px;
-} */
-
-
 
 
 .benefits-title {
@@ -404,7 +361,6 @@ img {
     --items: 3;
 
 }
-
 
 
 /* Секція Наша команда */
