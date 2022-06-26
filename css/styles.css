@@ -215,13 +215,10 @@ img {
 .section.hero {
 
     max-width: 1600px;
-    /* height: 600px; */
     margin-left: auto;
     margin-right: auto;
-    /* background-position: center; */
     background-size: cover;
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url('../images/hero/Img.jpg');
-    /* background-repeat: no-repeat; */
 
     padding: 200px 0;
     background-color: var(--third-background-color);
