@@ -18,7 +18,10 @@
 
     --items: 4;
     --indent: 30px;
+
+    
 }
+
 
 body {
     background-color: var(--background-color);
@@ -562,7 +565,7 @@ img {
 }
 
 .projects-list {
-    --items: 9;
+    --items: 3;
 }
 
 .projects-card-box {
