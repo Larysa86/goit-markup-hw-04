@@ -18,10 +18,6 @@
 
     --items: 4;
     --indent: 30px;
-    /* --card-set-gap: 30px;
-    flex-basis: calc(100% / 3 - var(--card-set-gap));
-    margin-left: calc(-1 * var(--card-set-gap));
-    margin-top: calc(-1 * var(--card-set-gap)); */
 }
 
 body {
@@ -107,10 +103,6 @@ img {
 }
 
 
-
-
-
-
 /* Шапка сторінки */
 
 .header-container {
@@ -131,7 +123,6 @@ img {
     font-weight: 700;
     font-size: 26px;
     line-height: 1.2;
-
 }
 
 .logo-accent {
@@ -161,13 +152,11 @@ img {
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.02em;
-
 }
 
 .current-link {
     color: var(--accent-color);
 }
-
 
 
 .header-link:hover,
@@ -186,22 +175,9 @@ img {
     margin-right: 50px;
 }
 
-
-
-/* .contact::before {
-    display: inline-block;
-    content: '';
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-
-
-    outline: 1px solid rebeccapurple;
-} */
-
-
-.contact {
-    display: block;
+.contact-link {
+    display: flex;
+    align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
 
@@ -209,16 +185,15 @@ img {
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.02em;
-
-    /* fill: #757575; проверить!!! */
+    color: var(--primary-text-color);
 }
 
-.contact:hover,
-.contact:focus {
+.contact-link:hover,
+.contact-link:focus {
     color: var(--accent-color);
 }
 
-/* .icon-mail {
+.icon-mail {
     margin-right: 10px;
     width: 16px;
     height: 12px;
@@ -230,8 +205,7 @@ img {
     width: 10px;
     height: 16px;
     fill: currentColor;
-} */
-
+}
 
 
 /* Унікальний контент сторінки(main) */
@@ -286,15 +260,12 @@ img {
     align-items: center;
     text-align: center;
     letter-spacing: 0.06em;
-
 }
 
 .hero-button:hover,
 .hero-button:focus {
     background-color: var(--accent-color-focus);
-
 }
-
 
 /* Секція Переваги */
 
@@ -308,7 +279,6 @@ img {
     border-radius: 4px;
     margin-bottom: 30px;
 }
-
 
 .benefits-list-item.icon-antenna::before {
     background-image: url(../images/icons/antenna.svg);
@@ -325,7 +295,6 @@ img {
 .benefits-list-item.icon-astronaut::before {
     background-image: url(../images/icons/astronaut.svg);
 }
-
 
 .benefits-title {
     margin-bottom: 10px;
@@ -359,7 +328,6 @@ img {
 
 .job-list {
     --items: 3;
-
 }
 
 
@@ -411,12 +379,6 @@ img {
     gap: 10px;
 }
 
-/* АБО */
-
-/* .networks-item:not(:last-child) {
-    margin-right: 10px;
-} */
-
 .social-link {
     display: flex;
     align-items: center;
@@ -425,9 +387,6 @@ img {
     width: 44px;
     height: 44px;
     color: #afb1b8;
-
-
-
 }
 
 .social-link:hover,
@@ -443,18 +402,9 @@ img {
 
 /* Cекція Постійні клієнти */
 
-
-
 .clients-list {
     --items: 6;
 }
-
-
-
-
-
-
-.clients-list-item {}
 
 .clients-link {
     display: flex;
@@ -486,18 +436,11 @@ img {
 
 .footer-container {
     display: flex;
-
 }
 
 .address-container:not(:last-child) {
     margin-right: 70px;
-
 }
-
-/* .container-address+.container-address {
-    margin-left: 70px;
-} */
-
 
 .footer .logo {
     display: block;
@@ -506,10 +449,7 @@ img {
     color: var(--secondary-title-color);
 }
 
-
-
 /* Адреса */
-
 
 .footer-list-item:not(:last-child) {
     margin-bottom: 9px;
@@ -543,11 +483,6 @@ img {
 }
 
 
-
-/* .footer-networks-item {
-
-} */
-
 .footer-social-link {
 
     display: flex;
@@ -559,16 +494,11 @@ img {
     background-color: rgba(255, 255, 255, 0.1);
     color: #FFFFFF;
     border-radius: 50%;
-
-
-
 }
-
 
 .footer-social-link:hover,
 .footer-social-link:focus {
     background-color: var(--accent-color);
-
 }
 
 .footer-social-icon {
@@ -577,8 +507,6 @@ img {
 
 
 /* Секція Портфоліо */
-
-
 
 /* Кнопки */
 
@@ -610,6 +538,8 @@ img {
 .button-list:focus {
     color: var(--secondary-title-color);
     background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -619,7 +549,6 @@ img {
 }
 
 .projects-title {
-
     margin-bottom: 4px;
 
     color: var(--title-text-color);
@@ -635,23 +564,24 @@ img {
     line-height: 1.88;
 }
 
-.projects-card {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(-1 * var(--card-set-gap));
-    margin-left: calc(-1 * var(--card-set-gap));
+.projects-list {
+    --items: 9;
 }
 
 .projects-card-box {
     border: 1px solid rgba(238, 238, 238, 1);
 }
 
-.projects-list-item {
-    flex-basis: calc(100% / 3 - var(--card-set-gap));
-    margin-top: var(--card-set-gap);
-    margin-left: var(--card-set-gap);
-}
-
 .img-content {
     padding: 20px 24px;
+}
+
+.projects-link {
+    display: block;
+}
+
+.projects-link:hover,
+.projects-link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
 }
