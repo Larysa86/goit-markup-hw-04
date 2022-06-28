@@ -437,6 +437,7 @@ img {
 
 .footer-container {
     display: flex;
+    align-items: baseline;
 }
 
 .address-container:not(:last-child) {
@@ -525,6 +526,7 @@ img {
     padding: 6px 22px;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
 
     font-family: inherit;
     font-weight: 500;
