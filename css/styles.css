@@ -157,13 +157,12 @@ img {
     letter-spacing: 0.02em;
 }
 
-.current-link {
+.header-link:hover,
+.header-link:focus {
     color: var(--accent-color);
 }
 
-
-.header-link:hover,
-.header-link:focus {
+.current-link {
     color: var(--accent-color);
 }
 
